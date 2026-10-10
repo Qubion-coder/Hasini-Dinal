@@ -153,8 +153,14 @@ function CountdownTimer() {
   return (
     <section
       ref={ref}
-      className="relative py-24 md:py-36 bg-gradient-to-br from-[#14532d] via-[#166534] to-[#14532d] flex flex-col items-center overflow-hidden z-20"
+      className="relative py-24 md:py-36 flex flex-col items-center overflow-hidden z-20 bg-black"
     >
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0">
+        <img src="/pre/IMG_4488.JPG.jpeg" className="w-full h-full object-cover opacity-40 mix-blend-screen" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#14532d]/80 via-[#166534]/70 to-[#14532d]/90 mix-blend-multiply" />
+      </div>
+      
       {/* Texture & Glow Layer */}
       <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] pointer-events-none z-0" />
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.1),transparent_70%)] pointer-events-none z-0" />
@@ -858,7 +864,7 @@ export default function WeddingInvitation() {
                       Venue
                     </p>
                     <p className="text-[#113d2f] text-sm md:text-base font-serif uppercase tracking-widest leading-relaxed">
-                      Paradise in Bolgoda<br/>Grand Ballroom
+                      Paradise Inn Bolgoda<br/>Grand Ballroom
                     </p>
                   </div>
                 </div>
@@ -943,7 +949,7 @@ export default function WeddingInvitation() {
                       className="relative z-10 w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white group"
                     >
                       <img
-                        src="/1.jpg"
+                        src="/pre/IMG_4489.JPG.jpeg"
                         alt="Udani & Darshana"
                         loading="lazy"
                         decoding="async"
@@ -995,8 +1001,6 @@ export default function WeddingInvitation() {
               </div>
             </section>
 
-
-
             <CountdownTimer />
 
             <section className="relative py-24 md:py-36 bg-white overflow-hidden">
@@ -1019,7 +1023,7 @@ export default function WeddingInvitation() {
                         </span>
                       </div>
                       <h2 className="font-cinzel text-[2.5rem] md:text-[4rem] text-[#166534] leading-tight tracking-widest font-bold uppercase">
-                        Paradise in Bolgoda
+                        Paradise Inn Bolgoda
                       </h2>
                       <p className="font-playball text-3xl md:text-5xl text-[#166534] italic mt-2">
                         The grand ballroom
@@ -1030,7 +1034,7 @@ export default function WeddingInvitation() {
                       <div className="flex items-start gap-4">
                         <MapPin className="w-5 h-5 text-[#166534] mt-1 shrink-0" />
                         <p className="text-lg md:text-xl text-[#166534] font-cinzel leading-relaxed tracking-wide uppercase">
-                          Paradise in Bolgoda, The grand ballroom.
+                          Paradise Inn Bolgoda, The grand ballroom.
                         </p>
                       </div>
                       <p className="text-[#166534]/70 text-sm md:text-base tracking-widest uppercase font-light leading-loose">
@@ -1345,6 +1349,25 @@ export default function WeddingInvitation() {
                     </div>
                   </motion.div>
                 </div>
+              </section>
+
+              {/* Elegant Divider Image */}
+              <section className="relative w-full h-[40vh] md:h-[70vh] overflow-hidden border-y-[6px] border-[#113d2f]">
+                <motion.div
+                  initial={{ scale: 1.15 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 2, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  className="absolute inset-0"
+                >
+                  <img 
+                    src="/pre/IMG_4490.JPG.jpeg" 
+                    alt="Udani & Darshana Beautiful Moment" 
+                    loading="lazy"
+                    className="w-full h-full object-cover object-center" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
+                </motion.div>
               </section>
 
               <footer className="relative py-24 md:py-32 bg-marble-emerald w-full flex flex-col items-center overflow-hidden z-20">
