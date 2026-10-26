@@ -12,7 +12,7 @@ import { useInView } from 'react-intersection-observer';
 
 const brideGroomImage = "/image123.jpeg";
 const backgroundMusic = "/Harry_Potter_-_Theme_Song_Hedwig_s_Theme_(mp3.pm).mp3";
-const googleScriptUrl = "https://script.google.com/macros/s/AKfycbyvUCgnoZhz_QuvLLGMB-lzEp05aPU2Angsnp8y44qh4a09l6NDcPuPwbQQEV1NkAKk/exec";
+const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzUhMfjlvB-Q89txL_PHlfNZPzX89n0liV-TnSoCfhN2MA8sGdHMkwL4rEDHdRtYtadlw/exec";
 
 /** iOS / Android block unmuted autoplay; iPadOS may report as MacIntel. */
 function isLikelyMobileOrTablet() {
@@ -733,10 +733,8 @@ export default function WeddingInvitation() {
       await submitToGoogleSheet({
         action: "rsvp",
         name: rsvpForm.name.trim(),
-        place: "",
         attending: rsvpForm.attending,
         guests: rsvpForm.attending === "yes" ? rsvpForm.guests : "0",
-        dietaryNotes: "",
       });
       setRsvpStatus("success");
       setRsvpForm({ name: "", attending: "yes", guests: "1" });
