@@ -85,7 +85,7 @@ export default function AdminPage() {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="e.g. Sanjaya"
+              placeholder="e.g. Tharushi"
               className="w-full bg-transparent border-b-2 border-[#e3c77d] py-3 text-[#3b2314] focus:outline-none focus:border-[#d4af37] transition-all font-serif text-lg italic placeholder:text-[#b8860b]"
             />
           </div>
