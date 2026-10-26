@@ -598,7 +598,12 @@ export default function WeddingInvitation() {
     const params = new URLSearchParams(window.location.search);
     const to = params.get("to");
     if (to) {
-      setGuestName(to.replace(/_/g, " ")); // Replace underscores with spaces for cleaner URLs
+      const name = to.replace(/_/g, " ").trim(); // Replace underscores with spaces for cleaner URLs
+      setGuestName(name);
+      // Pre-fill RSVP and wish forms with the invited name (with prefix), minus a "Dear" greeting
+      const formName = name.replace(/^dear\s+/i, "");
+      setRsvpForm((prev) => ({ ...prev, name: formName }));
+      setWishForm((prev) => ({ ...prev, name: formName }));
     }
   }, []);
   // -----------------------------
@@ -737,7 +742,7 @@ export default function WeddingInvitation() {
         guests: rsvpForm.attending === "yes" ? rsvpForm.guests : "0",
       });
       setRsvpStatus("success");
-      setRsvpForm({ name: "", attending: "yes", guests: "1" });
+      setRsvpForm((prev) => ({ name: guestName ? prev.name : "", attending: "yes", guests: "1" }));
     } catch {
       setRsvpStatus("error");
     }
@@ -760,7 +765,7 @@ export default function WeddingInvitation() {
         message: wishForm.message.trim(),
       });
       setWishStatus("success");
-      setWishForm({ name: "", message: "" });
+      setWishForm((prev) => ({ name: guestName ? prev.name : "", message: "" }));
     } catch {
       setWishStatus("error");
     }
