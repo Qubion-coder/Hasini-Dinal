@@ -438,7 +438,7 @@ export default function EnvelopeOpener({ onOpen }: EnvelopeOpenerProps) {
                       </div>
 
                       <p className="mt-5 text-[11px] uppercase tracking-[0.36em] text-[#8c6a16]">
-                        December 11, 2026
+                        January 20, 2027
                       </p>
                     </div>
                   </div>
